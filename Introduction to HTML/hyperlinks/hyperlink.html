@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hyperlinks</title>
+    <style>
+        p{
+            font-size: 20px;
+        }
+        body{
+            overflow-y: scroll;
+        }
+    </style>
+</head>
+<body>
+<h1>Creating hyperlinks</h1>
+
+    <h2>Youtube Link Section </h2>
+        <p id="ytlink">
+            this is a link for <a href="https://www.youtube.com/">youtube</a>.
+        </p>
+        <p>
+            the other link is for 
+            <a href="https://www.youtube.com/channel/UCD8ietA1MEdWNx5bJh8cGqA" 
+            title="the best youtube channel ever created">
+            my youtube channel
+            </a>
+            .
+        </p>
+        <p>go back to the <a href="paths.html" target="_self">path</a> file.</p>
+    
+    <h2>document fragments</h2> 
+        <p>know more about linking to <a href="paths.html#subdir">subdirectory files</a> </p> 
+        <p>go directly to the <a href="#ytlink">youtube link session</a></p>       
+    <h2>absolute vs relative URLs </h2>
+        <h3>Absolute URL </h3>
+            <p>do you want to know more about sports? go to 
+            <a href="https://www.espn.com/">ESPN website</a>.</p>
+        <h3>Relative URL</h3> 
+            <p> if you'd like to learn how to link pages, see our 
+            <a href="navigationMenu/index.html">navigation menu</a> example.</p>
+    <h2>links best practices</h2>
+        <ul>
+            <li> <h3>don't repeat the URL as part of the link</h3> 
+                <p>don't do this: <a href="https://www.microsoft.com/pt-br">https://www.microsoft.com/pt-br</a></p>
+            </li>
+            <li> <h3>don't say 'link' or 'links to' in the link text </h3>
+                <p>bad example: use that <a href="https://www.google.com/">link</a> to access google. </p>
+            </li>
+            <li> <h3>keep your link text as short as possible </h3>
+                <p>long link names usually annoy screen readers.</p></li>
+            <li><h3>do not use the same word to label different links </h3>
+                <p>words like 'click here' don't mean anything, they dont give the idea of what the link really is.</p>
+            </li>
+            <li><h3>use relative links wherever possible </h3>
+                <p>it makes your code more readable. </p> 
+                <p>it makes the browser's job more efficient.</p>
+            </li>
+            <li><h3>Linking to non-HTML resources — leave clear signposts</h3> 
+            <p><a href="http://www.software-download-example.com/latest-version">
+             update to the latest version (.exe, 50MB)
+            </a></p>
+            </li> 
+            <li><h3>Use the download attribute when linking to a download </h3> 
+            <p><a href="https://download.mozilla.org/?product=firefox-latest-ssl&os=win64&lang=en-US"
+                download="firefox-latest-64bit-installer.exe">
+               Download Latest Firefox for Windows (64-bit) (English, US)
+             </a>
+            </p>
+            <p>the download attribute is useful in case you want to provide a default save filename.</p> 
+            </li> 
+        </ul>    
+        
+     <h2>E-mail links </h2>
+        <p>You can contact me sending an <a href="mailto:bernardinojosa@mail.org">E-mail</a>.</p>
+        <p>It's also a possibility to make an <a href="mailto:">E-mail</a> 
+        link without any destination.</p>
+
+        <h3>Specifying details</h3>  
+            <p>you can also add other standard E-mail header fields. 
+                In order to put those headers, you must use the standard URL query notation.</p> 
+            <p>
+                <a href="mailto:nowhere@mozilla.org?cc=name2@rapidtables.com&bcc=name3@rapidtables.com
+                &subject=The%20subject%20of%20the%20email&body=The%20body%20of%20the%20email">
+                    Send mail with cc, bcc, subject and body
+                </a>
+            </p>
+         Test your skills! 
+</body>
+</html>

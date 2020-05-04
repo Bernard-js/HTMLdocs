@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Semantics</title>
+    <style>
+        p{
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <!-- the span tag above has the same style of a h1 element,
+     but it has no semantic value, so it cannot be considerered a top-level heading -->
+    <h1>This is a top level heading. </h1>
+    <span style="font-size: 32px; margin: 21px 0; display: block;font-weight: bold;"> Is this a top level heading?</span>
+    
+    <!-- adding emphasis to some words  -->
+    <p>i'm <em>glad</em> you weren't <em>late</em>.</p>
+
+    <!-- the 'em' elements use italic by default, but you shouldn't use 
+     this element just for giving italic styling for the word.-->
+    
+    <!-- instead, you could use a span element and add CSS style to it,
+    or simply just using the 'i' element -->
+
+    <p>This word is in <span style="font-style: italic;">italic</span> style.</p>
+    <p>The word <i>font-style</i> is in italic font style.</p>
+    
+    <!-- the same idea of semantics are applied to the 'strong' element -->
+    
+    <p>This liquid is <strong>highly toxic</strong>.</p>
+    <p>I am counting on you. <strong>Do not</strong> be late!</p>
+
+    <!-- you can use a span tag with styling or just a 'b' element -->
+    
+    <p>This liquid is <span style="font-weight: bold;">highly toxic</span>.</p>
+    <p>I am counting on you. <b>Do not</b> be late!</p>
+
+    <!-- you can nest an emphasis inside a strong importance tag and vice-versa -->
+
+    <p>if you drink it, <strong>you may <em>die</em>!</strong></p>
+
+    <!-- presentational elements, like 'b' and 'i' should not be used only for styling purposes. 
+     you should use CSS styling instead -->
+
+
+</body>
+</html>

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Formatting</title>
+    <style>
+        body{
+            overflow-y: scroll;
+            font-size: large;
+        }
+        time{
+            display: block;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Advanced Text Formatting</h1>
+    <h2>Description Lists</h2>
+    <dl>
+        <dt>Description List</dt>
+        <dd>is a list that contains a set of terms with its definition.</dd>
+        <dt>Description Term</dt>
+        <dd>a term that makes part of the list and has a certain definition.</dd>
+        <dt>Description definition</dt>
+        <dd>a block of text that defines its given term.</dd>
+        <dd>It is possible to have more than one definition within the same term.</dd>
+    </dl>
+    <h2>Quotations</h2>
+    <h3>Block Quotes</h3>
+    <blockquote cite="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/blockquote">
+        <p>The <strong>HTML <code>&lt;blockquote&gt;</code> Element</strong> (or <em>HTML Block
+        Quotation Element</em>) indicates that the enclosed text is an extended quotation.</p>
+    </blockquote>
+    <h3>Inline Quotes</h3>
+    <p>The quote element — <code>&lt;q&gt;</code> — is <q cite="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/q">intended
+        for short quotations that don't require paragraph breaks.</q></p>
+    <h3>Citations</h3>
+        <p>
+            <a href="https://dotnet.microsoft.com/apps/aspnet"><cite>ASP.NET</cite></a>  
+            is a server side web framework made by microsoft 
+            <q cite="https://dotnet.microsoft.com/apps/aspnet">
+                for building web apps and services with .NET and C#.</q> 
+        </p>
+    
+    <h2>Abbreviation</h2>
+        We use <abbr title="Hypertext Markup Language">HTML</abbr>  to structure our web documents.
+    
+    <h2>Marking up contact details</h2>
+        <address>
+            <p>Alexander de Almeida <br>
+            39 anos <br>
+            Empresário
+            </p>
+        </address>
+
+    <h2>Superscript and Subscript</h2>
+        <p>June 17<sup>th</sup> was a day to remember.</p>
+        <p>the chemical formula of the gasoline is C<sub>8</sub>H<sub>18</sub>.</p>
+        <p>X<sup>3</sup>+2X<sup>2</sup>+4X+1 is a 3<sup>rd</sup> degree polynomial.</p>
+
+    <h2>Representing computer code</h2>
+        <h3>elements for marking up computer code: </h3>
+        <ul>
+            <li><code>&lt;code&gt;</code>: For marking up generic pieces of computer code.</li>
+            <li><code>&lt;pre&gt;</code>: For retaining Whitespace (usually blocks of code).</li>
+            <li><code>&lt;var&gt;</code>: For marking up variable names.</li>
+            <li><code>&lt;kbd&gt;</code>: For marking up keyboard inputs, like shortcuts.</li>
+            <li><code>&lt;samp&gt;</code>: For marking the output of a computer program.</li>
+        </ul>
+        <p>see that example below: </p>
+        <pre>
+            <code>
+                var number = 25
+                console.log(number)
+            </code>
+        </pre>
+        <p>use the <code>console.log()</code> method to output information in the console.</p>
+
+        <p>in the example above, <var>number</var> represents the number 25.</p>
+
+        <p>copy the code above with <kbd>Ctrl</kbd>+<kbd>C</kbd>.</p>
+        
+        <p>program output: <samp>25</samp></p> 
+
+    <h2>Marking up times and dates</h2>
+        <!-- Standard simple date -->
+        <time datetime="2016-01-20">20 January 2016</time>
+        <!-- Just year and month -->
+        <time datetime="2016-01">January 2016</time>
+        <!-- Just month and day -->
+        <time datetime="01-20">20 January</time>
+        <!-- Just time, hours and minutes -->
+        <time datetime="19:30">19:30</time>
+        <!-- You can do seconds and milliseconds too! -->
+        <time datetime="19:30:01.856">19:30:01.856</time>
+        <!-- Date and time -->
+        <time datetime="2016-01-20T19:30">7.30pm, 20 January 2016</time>
+        <!-- Date and time with timezone offset-->
+        <time datetime="2016-01-20T19:30+01:00">7.30pm, 20 January 2016 is 8.30pm in France</time>
+        <!-- Calling out a specific week number-->
+        <time datetime="2016-W04">The fourth week of 2016</time><!-- Standard simple date -->
+        <time datetime="2016-01-20">20 January 2016</time>
+        <!-- Just year and month -->
+        <time datetime="2016-01">January 2016</time>
+        <!-- Just month and day -->
+        <time datetime="01-20">20 January</time>
+        <!-- Just time, hours and minutes -->
+        <time datetime="19:30">19:30</time>
+        <!-- You can do seconds and milliseconds too! -->
+        <time datetime="19:30:01.856">19:30:01.856</time>
+        <!-- Date and time -->
+        <time datetime="2016-01-20T19:30">7.30pm, 20 January 2016</time>
+        <!-- Date and time with timezone offset-->
+        <time datetime="2016-01-20T19:30+01:00">7.30pm, 20 January 2016 is 8.30pm in France</time>
+        <!-- Calling out a specific week number-->
+        <time datetime="2016-W04">The fourth week of 2016</time>
+</body>
+</html>

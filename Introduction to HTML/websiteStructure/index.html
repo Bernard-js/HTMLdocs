@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document and Website Structure</title>
+    <style>
+        p{
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+    <h1>Document and Website Structure</h1>
+    </header>
+    <main>
+        <article>
+            <h2>Basic Sections of a Document</h2>
+            <ul>
+                <li><p>Header: <code>&lt;header&gt;</code></li>
+                <li><p>Navigation Bar: <code>&lt;nav&gt;</code></p></li>
+                <li><p>Main Content: <code>&lt;main&gt;</code>, with various content subsctions represented by <code>&lt;article&gt;</code>, <code>&lt;section&gt;</code> and <code>&lt;div&gt;</code> elements.</p></li>
+                <li><p>Sidebar: <code>&lt;aside&gt;</code>; usually placed inside <code>&lt;main&gt;</code>.</p></li>
+                <li><p>Footer: <code>&lt;footer&gt;</code></p></li>
+            </ul>
+        </article>
+
+        <article>
+            <h2>Section Elements definition and good practices</h2>
+            
+            <section>
+                <h3>semantic sectioning elements</h3>
+                <p><code>&lt;main&gt;</code> is for content just for this page. 
+                Main element must be a direct child of body, nesting it with other elements is a bad practice.</p>
+                
+                <p><code>&lt;article&gt;</code> it encloses a piece of content that has a meaning on his own, 
+                independing of other contents of the same page. </p>
+                
+                <p><code>&lt;section&gt;</code> it groups one piece of page that execute a single task.
+                is a good practice to start each section with a heading.
+                It is possible to nest articles in a section and sections in an article, it depends on each case.</p>
+                
+                <p><code>&lt;aside&gt;</code> contains contents that are not directly related to the main content,
+                but it can have additional information indirectly related with the main content(like related links, author bio, etc...).</p>
+                
+                <p><code>&lt;header&gt;</code> represents a group of introductory content. 
+                If it is a child of <code>&lt;body&gt;</code> it defines the global header of a webpage, 
+                    but if it's a child of an <code>&lt;article&gt;</code> or <code>&lt;section&gt;</code>it defines a specific header for that section.</p>
+                
+                <p><code>&lt;nav&gt;</code> contains the main navigation functionality for the page.</p>
+                
+                <p><code>&lt;footer&gt;</code> represents a group of end content for a page.</p>
+            </section>
+
+            <section>
+                <h3>Non-semantic wrappers</h3>
+                <p>if you want to separate some content that has no semantic value, 
+                    or you just want to use some CSS or JavaScript to it, elements like <code>&lt;div&gt;</code> or <code>&lt;span&gt;</code>
+                could be useful. It is a good practice to give a class attribute to each element.</p>
+                
+                <p><code>&lt;span&gt;</code> is an inline non semantic element.</p> 
+                <p><code>&lt;div&gt;</code> is a block level non semantic element.</p>
+                <p>using too many divs can be very convenient but it is a very bad practice, as it has no meaning at all.</p>
+            </section> 
+
+            <section>
+                <h3>Line breaks and Horizontal rules</h3>
+                <p> The <code>&lt;br&gt;</code> element is used for breaking a paragraph in rows. It is used as an emtyy element.</p>
+                <div class="poem-example">
+                <p>
+                    roses are red <br>
+                    violets are blue <br>
+                    I don't know HTML <br>
+                    neither do you.
+                </p>
+                </div>
+
+                <p>
+                <code>&lt;hr&gt;</code> elements create a horizontal rule in the document that denotes a thematic change in the text (such as a change in topic or scene).
+                Visually it just looks like a horizontal line. See the example below:
+                </p>
+                
+                <p>Ron was backed into a corner by the marauding netherbeasts. Scared, but determined to protect his friends, he raised his wand and prepared to do battle, hoping that his distress call had made it through.</p>
+                <hr>
+                <p>Meanwhile, Harry was sitting at home, staring at his royalty statement and pondering when the next spin off series would come out, when an enchanted distress letter flew through his window and landed in his lap. He read it hazily and sighed; "better get back to work then", he mused.</p>
+           </section>
+        </article>
+    </main>
+</body>
+</html>

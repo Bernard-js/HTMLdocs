@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Images in HTML</title>
+    <style>
+        p{
+            font-size: 20px;
+        }
+        body{
+            padding-left: 200px;
+            padding-right: 200px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+    <h1>Images in HTML</h1>
+    </header>
+
+    <main>
+        <article>
+        <h2>Putting images on webpages</h2>
+            <p>
+            you can add an image to your website by putting an 
+            <code>&lt;img&gt;</code> tag with the <strong>src</strong> attribute,
+            which stands for <em>source</em>, it contains the image path. 
+            </p>
+            
+            <p>Here goes an example: </p>
+            
+            <img src="images/eagle.jpg">
+            
+            <p>
+            <code>&lt;img&gt;</code> is an empty element, meaning that it has neither text nor
+            closing tag. So the element will only be usefull if it has at least one attribute.
+            </p>
+            
+            <p>
+            it is a good practice to use <strong>relative</strong> paths instead of absolute 
+            and put the image files inside an <em>images</em> or <em>assets</em> directory.
+            These actions make the <abbr title="Search Engine Optimization">SEO</abbr>'s work a lot easier.
+            </p>
+            <section>
+            <h3>Alternative Text</h3>
+                <p>
+                the img tag also has an <em>alternative text</em> attribute, <code>alt</code>,
+                which is pretty usefull for cases where the image could not be rendered on the page.
+                </p>
+                
+                <p>
+                in the next example, we have the same image as before, 
+                but their reference at the src attribute is misspelled.
+                </p>
+                
+                <img src="images/egle.jpg" alt="the left side of an eagle's head">
+                
+                <p>There is many reasons why you'd like to have an alt attribute to your image: </p>
+                
+                <ul>
+                    <li><p>Screen reader users can listen to the text and have a brief description of the image.</p></li>
+                    <li><p>as was shown in the example above, the path name can be misspelled.</p></li>
+                    <li><p>The image type isn't supported by the browser.</p></li>
+                    <li><p>Search engines can use the text in search queries.</p></li>
+                    <li><p>Users have turned off images to reduce data transfer volume.</p></li>
+                </ul>
+            </section>
+            
+            <section>
+            <h3>Width and Height</h3>
+                <p>
+                it's also possible to specify the width and height of the image.
+                this helps, for example, when the page hasn't yet been loaded, 
+                the browser sets a space to fill the image whem it's fully loaded.
+                This makes the loading process smoother, improving the user experience. 
+                </p>
+                
+                <img src="images/coffe.jpg" 
+                alt="a white cofee cup filled with cofee"
+                width="640"
+                height="425"
+                >
+
+                <p>
+                However, you shouldn't change the image's width and height at the attribute. 
+                It distorts the image natural form and doesn't produce a good user experience.
+                you should use a proper image editor, like adobe photoshop, or CSS instead.
+                </p>
+            </section>
+
+            <section>
+            <h3>Image Titles</h3>
+                <p>
+                you can add the <code>title</code> attribute,that gives 
+                a brief image description when the mouse is hovered over the image.
+                </p>
+
+                <img src="images/coffe.jpg" 
+                alt="a white coffe cup filled with coffe"
+                width="640"
+                height="425"
+                title="a cup of coffe in the morning.It can't get better than that"
+                >
+
+                <p>
+                However, it's not recommended to do it, mainly because of many accessibility problems 
+                that have occured with screen readers. you should put that informatio in the article's text instead.
+                </p>
+            </section>
+        </article>
+
+        <article>
+            <h2>Annotating images with figures and captions</h2>
+
+            <p>
+            you can put notes and caption to an image by creating a div containing the 
+            image and the caption, and then style with CSS and do whatever you want. 
+            </p>
+            <!-- Something like this: -->
+            <!--
+                <div>
+                    <img src="images/snare.jpg" 
+                    alt="a snare with two drumsticks"
+                    width="638"
+                    height="480"
+                    >
+
+                    <p>a basic picture of a snare, with also two drumsticks on it.</p>
+                </div>
+            -->
+            <p>
+            That's fine, but it isn't recommended, as it has no semantic value. Instead the HTML5 tags
+            <code>&lt;figure&gt;</code> and <code>&lt;figcaption&gt;</code> fits perfectly at this context.
+            </p>
+
+            <figure>
+                <img src="images/snare.jpg" 
+                alt="a snare and two drumsticks"
+                width="638"
+                height="480"
+                >
+
+                <figcaption>a basic picture of a snare, with also two drumsticks on it.</figcaption>
+            </figure>
+        </article>
+        <article>
+            <h2>CSS background images</h2>
+            <p>
+            You can also use CSS to embed images into webpages by using the CSS background-image property 
+            For example, to place a background image on every paragraph on a page, you could do this:    
+            </p>
+            <code>
+                <pre>
+                    p {
+                        background-image: url("images/dinosaur.jpg");
+                      }
+                      
+                </pre>
+            </code>
+            <p>
+                dealing with embedded CSS images is a lot easier to position and control then with HTML ones.
+                So why use HTML instead? CSS images doesn't have any semantic meaning at all, it has no text equivalent,
+                and cannot be read by screen readers, so it's recommended for decoration purposes only.
+            </p>
+
+            <p>
+            Summing up: if an image has meaning, in terms of your content, you should use an HTML image.
+            If an image is purely decoration, you should use CSS background images.
+            </p>
+        </article>
+    </main>
+</body>
+</html>
