@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Audio and Video</title>
+    <link rel="stylesheet" href="../global.css">
+</head>
+<body>
+
+    <header>
+    <h1>video and Audio Content</h1>
+    </header>
+
+    <main>
+        <article>
+            <section>
+                <h2>Video and Audio on the web</h2>
+                    <p>
+                        In the only 2000's, web developers used to apply video and audio content
+                        with a technology called flash. Flash had a lot of problems, it was a
+                        proprietary software and it had poor performance on mobile devices as it
+                        is well documented in Steve Jobs's article <a href="https://www.apple.com/hotnews/thoughts-on-flash/">Thoughts on Flash</a>.
+                    </p>
+
+                    <p>
+                        With the release of HTML5, tools for embed audio and video were created
+                        and patching all the problems that Flash had, making it useless. In this 
+                        article i'd like to talk about how these tools work.
+                    </p>
+            </section>
+            
+            <section>
+                <!-- this section is still incomplete -->
+                    <h3>The Video element</h3>
+                    
+                        <p>
+                            you can embed a video in your website by using the 
+                            <code>&lt;video&gt;</code> video element. See an example below: 
+                        </p>
+            
+                        <video src="assets/videos/MetroidPrime.mp4" controls>
+                            <p>Your browser doesn't support HTML5 video. Here is a <a href="https://archive.org/details/MetroidPrime_103/MetroidPrime_103_HQ_part03.mp4">link to the video</a> instead.</p> 
+                        </video>
+                    
+            </section>
+
+            <section>
+            <!-- this section is still incomplete -->
+                <h3>Using multiple formats to improve compatibility</h3>
+                
+                    <h4>contents of a media file</h4>
+
+                    <h4>media file support in browsers</h4>
+                        <p>here is an example of a video that supports many different browsers: </p>
+
+                        <video controls>
+                            <source src="assets/videos/MetroidPrime.mp4" type="video/mp4">
+                            <source src="assets/videos/MetroidPrime.avi" type="video/avi">
+                            <p>Your browser doesn't support HTML5 video. Here is a <a href="https://archive.org/details/MetroidPrime_103/MetroidPrime_103_HQ_part03.mp4">link to the video</a> instead.</p>
+                        </video>
+            </section>
+            
+            <section>
+                <!--not completed yet-->
+                <h3>Other <code>&lt;video&gt;</code> Features</h3>
+                    <dl>
+                        <dt><em>width</em> and <em>height</em></dt>
+                        <dd> <!-- a description will soon be made --> </dd>
+
+                        <dt>autoplay</dt>
+                        <dd> <!-- a description will soon be made --> </dd>
+
+                        <dt>loop</dt>
+                        <dd> <!-- a description will soon be made --> </dd>
+
+                        <dt>muted</dt>
+                        <dd> <!-- a description will soon be made --> </dd>
+
+                        <dt>poster</dt>
+                        <dd> <!-- a description will soon be made --> </dd>
+
+                        <dt>preload</dt>
+                        <dd> <!-- a description will soon be made --> </dd>
+                    </dl>
+                <p>an example of the implementation of these Features would be something like this: </p>
+
+                <video controls
+                width="320" height="240"
+                loop muted 
+                poster="assets/images/nes.jpg"
+                >
+                    <source src="assets/videos/MetroidPrime.mp4" type="video/mp4">
+                    <source src="assets/videos/MetroidPrime.avi" type="video/avi">
+                    <p>Your browser doesn't support HTML5 video. Here is a <a href="https://archive.org/details/MetroidPrime_103/MetroidPrime_103_HQ_part03.mp4">link to the video</a> instead.</p>
+                </video>
+
+                <p>Now an example with the autoplay Feature: </p>
+                <video controls autoplay muted>
+                    <source src="assets/videos/sintel-short.webm" type="video/webm">
+                </video>
+            </section> 
+        </article>
+        
+        
+    </main>
+</body>
+</html>

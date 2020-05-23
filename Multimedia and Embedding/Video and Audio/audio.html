@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>audio content</title>
+</head>
+
+<body>
+    <header>
+        <h1>Displaying Audio Content</h1>
+    </header>
+    <main>
+        <article>
+            <header>
+                <h3>The <code>&lt;audio&gt;</code> element</h3>
+                <!-- this section is still incomplete -->
+            </header>
+
+            <p>
+                the audio element works just like the video does, with a few differences.
+                see the example below:
+            </p>
+
+            <audio controls id="audio-element">
+                <source src="assets/audio/napolitan_mp3.mp3" type="audio/mp3">
+                <p>Your browser doesn't support HTML5 audio. Here is a <a href="audio/napolitan.mp3">link to the
+                        audio</a> instead.</p>
+            </audio>
+
+            <p>
+                the audio element doesn't support the <strong>width</strong> and
+                <strong>height</strong>, as well as <strong>poster</strong>,
+                because it has no visual element. other than this, it supports
+                all the attributes that video does. See the example below:
+            </p>
+
+            <audio controls loop muted autoplay preload="auto">
+                <source src="assets/audio/napolitan_mp3.mp3" type="audio/mp3">
+                <source src="assets/audio/napolitan_ogg.ogg" type="audio/ogg">
+                <p>Your browser doesn't support HTML5 audio. Here is a link to the <a href="audio/napolitan.mp3">audio</a> instead.</p>
+            </audio>
+        </article>
+    </main>
+</body>
+
+</html>
