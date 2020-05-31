@@ -31,57 +31,113 @@
             </section>
             
             <section>
-                <!-- this section is still incomplete -->
-                    <h3>The Video element</h3>
-                    
-                        <p>
-                            you can embed a video in your website by using the 
-                            <code>&lt;video&gt;</code> video element. See an example below: 
-                        </p>
+                <h3>The Video element</h3>
+                    <p>
+                        you can embed a video in your website by using the 
+                        <code>&lt;video&gt;</code> video element. See an example below: 
+                    </p>
             
-                        <video src="assets/videos/MetroidPrime.mp4" controls>
-                            <p>Your browser doesn't support HTML5 video. Here is a <a href="https://archive.org/details/MetroidPrime_103/MetroidPrime_103_HQ_part03.mp4">link to the video</a> instead.</p> 
-                        </video>
-                    
-            </section>
+                    <video src="assets/videos/MetroidPrime.mp4" controls>
+                        <p>Your browser doesn't support HTML5 video. Here is a <a href="https://archive.org/details/MetroidPrime_103/MetroidPrime_103_HQ_part03.mp4">link to the video</a> instead.
+                        </p> 
+                    </video>
 
-            <section>
-            <!-- this section is still incomplete -->
-                <h3>Using multiple formats to improve compatibility</h3>
-                
-                    <h4>contents of a media file</h4>
+                    <p>in this example, you have three features added to the video element: </p>
 
-                    <h4>media file support in browsers</h4>
-                        <p>here is an example of a video that supports many different browsers: </p>
-
-                        <video controls>
-                            <source src="assets/videos/MetroidPrime.mp4" type="video/mp4">
-                            <source src="assets/videos/MetroidPrime.avi" type="video/avi">
-                            <p>Your browser doesn't support HTML5 video. Here is a <a href="https://archive.org/details/MetroidPrime_103/MetroidPrime_103_HQ_part03.mp4">link to the video</a> instead.</p>
-                        </video>
-            </section>
-            
-            <section>
-                <!--not completed yet-->
-                <h3>Other <code>&lt;video&gt;</code> Features</h3>
                     <dl>
-                        <dt><em>width</em> and <em>height</em></dt>
-                        <dd> <!-- a description will soon be made --> </dd>
+                        <dt><strong>src</strong></dt>
+                        <dd>It is an attribute, and like the         <b>img</b> element, it has the path        to the video that you want to embed.</dd>
+
+                        <dt><strong>controls</strong></dt>
+                        <dd>It is an attribute, that adds an video control interface, where you can start/stop the video, adjust the volume, change resolution, etc. Each browser has it's own control interface, but the functionalies are basically the same.</dd>
+
+                        <dt><strong>The paragraph inside the video tag</strong></dt>
+
+                        <dd>This is a <strong>Fallback content</strong>. This type of content will appear if you are navigating through an older browser that doesn't support the video functionality. Usually, it has a link to the website where the video is hosted, so that the person have access to the content even in older technologies.</dd>
+                    </dl>         
+            </section>
+
+            <section>
+                <h3>
+                    Using multiple formats to improve compatibility
+                </h3>
+                <p>If you are navigating through internet explorer or an older version of a web browser and you are accessing the fallback content maybe the video won't play. This might be because your browser doesn't support the video file format. In this section, we'll see how to solve this problem.</p>
+
+                <section>
+                    <h4>contents of a media file</h4>
+                        <p>File Formats like <em>MP3</em>, <em>MP4</em>, or <em>AVI</em> are called <strong>Container Formats</strong>. These formats store some information about the file, like the audio and video tracks, some additional <em>metadata</em>, the <em>codecs</em>, and so on. </p>
+                    
+                        <p>The video and audio tracks inside the containers have their own file format to the codecs. The audio tracks use audio codecs and the video tracks use video codecs. Each browser have support for certain types of formats, as well as containers.</p>
+
+                        <p>For Example: </p>
+                        <ul>
+                            <li>A WebM container typically packages Vorbis or Opus audio with VP8/VP9 video. This is supported in all modern browsers, though older versions may not work</li>
+                            <li>An MP4 container often packages AAC or MP3 audio with H.264 video. This is also supported in all modern browsers, as well as Internet Explorer.</li>
+                            <li>The Ogg container tends to use Vorbis audio and Theora video. This is best supported in Firefox and Chrome, but has basically been superseded by the better quality WebM format.</li>
+                        </ul>
+                    
+                        <p>However, there are some exceptions. For example, some audio tracks have more simplified containers or don't have containers at all. The <em>FLAC</em> codec, is stored in FLAC files, that are basically raw FLAC data.</p>
+
+                        <p>Another example is the <em>MP3</em> File. It is basically an MPEG-1 audio layer III audio track, inside an MPEG or MPEG-2 container. This is great because most browsers don't support MPEG containers in audio/video tags, but they do support MP3.</p>
+
+                        <p>Usually, the audio player will play the MP3 or OGG file directly, it doesn't need any container.</p>
+                </section>
+
+                <section>
+                    <h4>media file support in browsers</h4>
+
+                    <p>The codecs described in the previous section are used for compressing audio file into smaller sized data. Each browser supports specific types of codecs, that are used to convert compressed data into binary file and vice-versa. </p>
+
+                    <p>This turns out to be a big problem, because not just different browsers support different file formats, but they also support different kinds of codecs. That problem can be solved by providing multiple file formats for the same media.</p>   
+
+                    <p>here is an example of a video that supports many different browsers: </p>
+
+                    <video controls>
+                        <source src="assets/videos/MetroidPrime.mp4" type="video/mp4">
+                        <source src="assets/videos/MetroidPrime.avi" type="video/avi">
+                        <p>Your browser doesn't support HTML5 video. Here is a <a href="https://archive.org/details/MetroidPrime_103/MetroidPrime_103_HQ_part03.mp4">link to the video</a> instead.</p>
+                    </video>
+
+                    <p>Here we've taken the src attribute out of the actual <code>&lt;video&gt;</code> tag, and instead included separate <code>&lt;source&gt;</code> elements that point to their own sources. In this case the browser will go through the <code>&lt;source&gt;</code> elements and play the first one that it has the codec to support.</p>
+
+                    <p>also each <em>source</em> tag has a 
+                    <strong>type</strong> attribute. It contains the MIME type of the source file. This attribute is optional, but is a good practice to use it. If type isn't included, the browser will try to render each file, until it gets to the type that the browser supports, which is an unnecessary job done by the browser.</p>
+                </section>
+            </section>
+            
+            <section>
+                <h3>
+                    Other <code>&lt;video&gt;</code> Features
+                </h3>
+                <p>There are some other video features that you can use, for example: </p>
+                    <dl>
+                        <dt>
+                            <em>width</em> and <em>height</em>
+                        </dt>
+                        <dd>You can change the video size by using these attributes or by using CSS. The video needs to maintain it's native aspect ratio. If the ratio is different from the original, it will fill the blank spaces with some solid background color.</dd>
 
                         <dt>autoplay</dt>
-                        <dd> <!-- a description will soon be made --> </dd>
+                        <dd>Makes the video start playing automatically, while the rest of the page is still being loaded.</dd>
 
                         <dt>loop</dt>
-                        <dd> <!-- a description will soon be made --> </dd>
+                        <dd>Makes the video or audio restart whenever it finishes.</dd>
 
                         <dt>muted</dt>
-                        <dd> <!-- a description will soon be made --> </dd>
+                        <dd>Makes the media play with the audio muted by default.</dd>
 
                         <dt>poster</dt>
-                        <dd> <!-- a description will soon be made --> </dd>
+                        <dd>The url of an image will display before the video starts to play. It should be used as a Thumbnail or a splash screen.</dd>
 
                         <dt>preload</dt>
-                        <dd> <!-- a description will soon be made --> </dd>
+                        <dd>
+                            <p>Used for buffering large Files. It can take one of these three values:</p>
+
+                            <ul>
+                                <li>"none"</li> does not buffer the file
+                                <li>"preload"</li> buffers the media file
+                                <li>"metadata"</li> buffers only the metadata for the file
+                            </ul>
+                        </dd>
                     </dl>
                 <p>an example of the implementation of these Features would be something like this: </p>
 
@@ -100,9 +156,7 @@
                     <source src="assets/videos/sintel-short.webm" type="video/webm">
                 </video>
             </section> 
-        </article>
-        
-        
+        </article> 
     </main>
 </body>
 </html>

@@ -4,40 +4,59 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>text tracks</title>
+    <link rel="stylesheet" type="text/css" href="../global.css">
 </head>
 <body>
     <header>
         <h1>Displaying video text tracks</h1>
     </header>
+    <main>
+        <article>
+            <h2>Introduction to WebVTT</h2>
+            <p>
+                some people will need to read text transcriptions of the audio tracks in some video files, for example:
+            </p>
+
+            <ul>
+                <li>many people are deaf or have some scale of auditory impairments.</li>
+                <li>others might be in a noisy enviroment, like a bar.</li>
+                <li>In the same way, people may be in an enviroment where the audio can cause a distraction, like a library.</li>
+                <li>People who don't understand the language spoken in the video might want a text transcript or a translation of the audio.</li>
+            </ul>
+
+            <p> 
+                Thanks to HTML5, it's possible to write text strings along with additional metadata, like specific times that the text should be displayed.
+                Those text strings are called <strong>cues
+                </strong>, and there are many cues that can be used to video files, such as:
+            </p>
+            
+            <dl>
+                <dt>Subtitles</dt>
+                <dd>Translation of the audio tracks, used mostly by foreign people.</dd>
+
+                <dt>Captions</dt>
+                <dd>Synchronized transcriptions or dialogs, To let people that can't hear the audio understand what's going on.</dd>
+
+                <dt>Timed descriptions</dt>
+                <dd>Text that should be spoken by the media player to let blind or visually impaired people understand what's going on.</dd>
+            </dl>
+
+            <p>to do so, we use a file format called WebVTT, in which the captions will be at. we use a <code>&lt;track&gt;     </code> element, as a child of the video element and after the source tags.</p>
+
+            <p> The track element recieve three attributes: 
+            <em>src</em>, that has a path referencing to the .vtt 
+            file; <em>kind</em> to specify the kind of cue (subtitles, captions or descriptions) and <em>srclang</em>, that informs to the browser in which language the text tracks are at. Here is an example:
+            </p>
+
+            <video id="video" controls preload="metadata">
+                <source src="assets/videos/sintel-short.webm" type="video/webm">
+                <track label="English" kind="subtitles" srclang="en" src="assets/captions/sintel-en.vtt" default>
+            </video>
+            
+            <!-- to be able to see the file, you have to set the property security.fileuri.strict_origin_policy to false in the flags of your web browser -->
+            <!-- remember, this isn't secure! So set to false only to see the subtitle example and then set back again to true -->
+            </article>
+    </main>
+    
 </body>
 </html>
-<article>
-    <h2>Introduction to WebVTT</h2>
-    <!-- this article is still incomplete -->
-    <!-- need to discuss the reason for putting video text tracks  -->
-    <p>
-        some people, for many reasons that will be discussed later, will need
-        to read text transcriptions of the audio tracks in some video tracks.
-        Thanks to HTML5, it's possible to add <strong>cues</strong> to video files, such as:
-    </p>
-    <ul>
-        <li>Subtitles</li>
-        <li>Captions</li>
-        <li>Timed descriptions</li>
-    </ul>
-    <p>
-    to do so, we use a file format called WebVTT, in which the captions will be at.
-    then, we use a <code>&lt;track&gt;</code> element, as a child of the video element 
-    and after the source element, with a <em>src</em> attribute referencing to the .vtt 
-    file. there are other attributes, such as <em>kind</em> and <em>srclang</em> that
-    will be discussed later. Here is an example:
-    </p>
-
-    <video id="video" controls preload="metadata">
-        <source src="assets/videos/sintel-short.webm" type="video/webm">
-        <track label="English" kind="subtitles" srclang="en" src="assets/captions/sintel-en.vtt" default>
-    </video>
-    
-    <!-- to be able to see the file, you have to set the property security.fileuri.strict_origin_policy to false -->
-    <!-- remember, this isn't secure! So set to false only to see the subtitle example and then set back again to true -->
-</article>
