@@ -48,7 +48,7 @@
             file; <em>kind</em> to specify the kind of cue (subtitles, captions or descriptions) and <em>srclang</em>, that informs to the browser in which language the text tracks are at. Here is an example:
             </p>
 
-            <video id="video" controls preload="metadata">
+            <video id="video" controls preload="metadata" sandbox="allow-same-origin">
                 <source src="assets/videos/sintel-short.webm" type="video/webm">
                 <track label="English" kind="subtitles" srclang="en" src="assets/captions/sintel-en.vtt" default>
             </video>

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../global.css">
+    <title>vector graphics</title>
+</head>
+<body>
+    <header>
+        <h1>Adding vector graphics to the web</h1>
+    </header>
+    <main>
+        
+
+        <section>
+            <h2>What are vector graphics?</h2>
+            <p>
+            On the web, you'll work with two types of image - 
+            <strong>raster images</strong>, and <strong>vector images</strong>:
+            </p>
+            <ul>
+                <li>Raster Image</li>
+                    <p> 
+                    are defined using a grid of pixels — a raster image file contains 
+                    information showing exactly where each pixel is to be placed, 
+                    and exactly what color it should be. Popular web raster formats include 
+                    Bitmap (.bmp), PNG (.png), JPEG (.jpg), and GIF (.gif.)
+                    </p>
+                <li>Vector Images</li>
+                    <p> 
+                    are defined using algorithms — a vector image file contains 
+                    shape and path definitions that the computer can use 
+                    to work out what the image should look like when rendered on the screen. 
+                    The SVG format allows us to create powerful vector graphics for use on the Web.
+                    </p>
+            </ul>
+
+            <p> 
+            now, let's see an <a href="https://mdn.github.io/learning-area/html/multimedia-and-embedding/adding-vector-graphics-to-the-web/vector-versus-raster.html">example</a>  in order to see the difference between
+            an (.png) image and an (.svg) image. you can realize that the star on the left (.png) gets pixellated as it get bigger, as the star on the right (.svg) can be zoomed in without being messy and pixellated.             
+            </p>
+        </section>
+
+        <section>
+            <h2>What is SVG?</h2>
+            <p>
+            SVG is an XML-based language for describing vector images. 
+            It's basically markup, like HTML, except that you've got many different elements 
+            for defining the shapes you want to appear in your image, and the effects you want to apply to those shapes.
+            </p>
+            
+            <p>this example creates an svg circle and rectangle: </p>
+
+            <svg version="1.1"
+            baseProfile="full"
+            width="300" height="200"
+            xmlns="http://www.w3.org/2000/svg">
+                <rect width="100%" height="100%" fill="black" />
+                <circle cx="150" cy="100" r="90" fill="blue" />
+                 
+            </svg>
+
+            <p>SVG has some additional advantages besides those described so far: </p>
+
+            <ul>
+                <li>Text in vector images remains accessible (which also benefits your SEO).</li>
+                <li>
+                SVGs lend themselves well to styling/scripting, because each component 
+                of the image is an element that can be coded via CSS or scripted via JavaScript.
+                </li>
+            </ul> class="code-container"
+
+            <p>So why would anyone want to use raster graphics over SVG? Well, SVG does have some disadvantages:</p>
+
+            <ul>
+                <li>
+                SVG can get complicated very quickly, meaning that files sizes can grow; 
+                complex SVGs can also take significant processing time in the browser.
+                </li>
+
+                <li>
+                SVG can be harder to create than raster images, 
+                depending of what kind of image you are trying to create.
+                </li>
+
+                <li>
+                SVG is not supported in older browsers, so may not be suitable if you need to support
+                older versions of Internet Explorer with your web site (SVG started being supported as of IE9.)   
+                </li>
+            </ul>
+
+        </section>
+
+        <section>
+            <h2>Adding SVG to your page</h2>
+
+                <h3>The quick way: <code class="code-container">&lt;img&gt;</code></h3>
+                    <img src="assets/pib-darkAlt2.svg" 
+                    alt="a house in L shape"
+                    height="300" width="400">
+                
+                <h3>Troubleshooting and cross-browser support</h3>
+                    <img src="assets/pib-darkAlt2.png" 
+                    alt="a house in L shape" 
+                    srcset="assets/pib-darkAlt2.svg"
+                    height="300"
+                    width="400">
+
+                    <h4>using SVGs as CSS background images</h4>
+
+                        <code class="code-container">
+                            <pre>
+                                background: url("pib-darkAlt2.png") no-repeat center;
+                                background-image: url("pib-darkAlt2.svg");
+                                background-size: contain;
+                            </pre>
+                        </code>
+                <h3>How to include SVG code inside your HTML</h3>
+                    <svg width="400" height="300">
+                        <rect width="100%" height="100%" fill="red" />
+                    </svg>
+                <h3>How to embed an SVG with an <code>&lt;iframe&gt;</code></h3>
+                    <iframe src="assets/pib-darkAlt2.svg" width="400" height="300" frameborder="0" sandbox>
+                        <img src="assets/pib-darkAlt2.png" alt="a house in L shape"/>
+                    </iframe>   
+            </section>
+    <main>
+</body>
+</html>
